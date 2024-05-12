@@ -1,0 +1,23 @@
+server:
+  port: 5050
+
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: local
+  profiles:
+    include: jwt #jwt.yml 불러오기
+
+collection:
+  user-collection: USER_COLLETION
+
+jwt:
+  secret: 63fba97a41e0d004e10e8dbbcb9a547819280efb00a54c732aca36a8a58258e4fcc539ffc5159a7f0a7be78b86efe001c12ba6af6debeb0a89e8ce7e82e75455
+  access:
+    expiration: 80
+    header: Authorization
+  refresh:
+    expiration: 90
+    header: Authorization-refresh
